@@ -9,6 +9,7 @@
 
 .name
 *.xml
-/out/
+/out
 
-.kugu98-java.iml
+kugu98-java.iml
+out
