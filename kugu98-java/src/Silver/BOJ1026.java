@@ -1,3 +1,5 @@
+package Silver;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
@@ -28,9 +30,9 @@ public class BOJ1026 {
         }
         Stack<Integer> stack = new Stack<Integer>();
 
-        int minIndex; // 최소값의 인덱스를 저장할 변수
+        int minIndex; // 최소값
 
-        // 배열의 모든 원소를 순회하면서, 가장 작은 값부터 스택에 push
+        // 가장 작은 값부터 스택에 push
         for (int i = 0; i < B.length; i++) {
             minIndex = i; // 최소값의 인덱스로 초기화
 
@@ -46,7 +48,6 @@ public class BOJ1026 {
             B[i] = B[minIndex];
             B[minIndex] = temp;
 
-            // 스택에 push
             stack.push(B[i]);
         }
 
