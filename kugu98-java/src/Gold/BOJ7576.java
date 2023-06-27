@@ -86,6 +86,6 @@ public class BOJ7576 {
                 }
             }
         }
-        return false; 
+        return false;
     }
 }
