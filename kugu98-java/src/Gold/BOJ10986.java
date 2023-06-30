@@ -11,27 +11,22 @@ public class BOJ10986 {
         StringTokenizer st=new StringTokenizer(br.readLine());
         int N=Integer.parseInt(st.nextToken());
         int M=Integer.parseInt(st.nextToken());
-        int S[]=new int[N];
-        int C[]=new int[M];
-        int answer=0;
         st=new StringTokenizer(br.readLine());
-        S[0]=Integer.parseInt(st.nextToken());
-        for(int i=1;i<N;i++){
+        int S[]=new int[N+1];
+        int answer=0;
+
+        for(int i=1;i<N+1;i++){
             S[i]=S[i-1]+Integer.parseInt(st.nextToken());
         }
 
-        for(int i=0;i<N;i++){
-            int re=S[i]%M;
-            if(re==0){
-                answer++;
-            }
-            C[re]++;
-        }
-        for(int i=0;i<M;i++){
-            if(C[i]>1){
-                answer=answer+(C[i]*(C[i]-1)/2);
+        for(int i=1; i<N+1; i++) {
+            for(int j=i; j<N+1; j++) {
+                if((S[j] - S[i-1]) % M == 0) {
+                    answer++;
+                }
             }
         }
+
         System.out.println(answer);
 
     }
